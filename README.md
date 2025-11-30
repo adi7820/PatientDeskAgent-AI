@@ -111,3 +111,12 @@ Get medication history → Primary Agent → Medication Agent (interacts with FH
 
 Ask about a medicine → Primary Agent → Medication Agent → queries Tavily MCP server → returns medicine details.
 
+## 🧪 Agent Evaluation
+
+To help you validate and test the behavior of different agents using in different user scenarios, I've include predefined evaluation dataset. These allow you to check that the agents behave as expected for common scenarios (appointments, patient registration, medication lookup).
+
+- `PatientDeskAgent/appointment_intake_eval.evalset.json` — evaluation cases for appointment-related flows.  
+- `PatientDeskAgent/medication_lookup_eval.evalset.json` — test cases for medication history lookup, medicine info requests, FHIR-server integration.  
+- `PatientDeskAgent/patientintake_eval.evalset.json` — test cases for patient-registration / intake flows.  
+
+
