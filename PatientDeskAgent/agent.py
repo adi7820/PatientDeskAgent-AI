@@ -58,7 +58,7 @@ medical_lookup_agent_remote = RemoteA2aAgent(
 current_time = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 root_agent = LlmAgent(
-    model="gemini-2.0-flash",  # Or an appropriate model for your use case
+    model="gemini-2.5-flash",  # Or an appropriate model for your use case
     name="primary_assistant",
     instruction=f"""
         You are a helpful customer support assistant for healthcare patients and administrators.
@@ -74,6 +74,10 @@ root_agent = LlmAgent(
         If a search comes up empty, expand your search before giving up.
 
         Current time: {current_time}.
+        
+         **IMPORTANT**: If a specialized assistant (e.g., for patient intake or appointments or medical lookup) has already been engaged for a multi-step process, 
+         you must allow that assistant to complete its task before taking over. Only if the specialized assistant explicitly signals completion or transfer, 
+         or if the user's query clearly indicates a new task, should you determine the next course of action.
         """,
     sub_agents=[
         patient_intake_agent_remote,

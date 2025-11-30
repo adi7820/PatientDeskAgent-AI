@@ -1,16 +1,3 @@
-"""
-patient_intake_agent
-
-This module defines the “Patient Intake Agent” for the Healthcare FrontDesk system.
-
-The agent’s purpose:
-- Collect new patient information via a tool (save_to_json_file),  
-- Serialize and store patient data locally (in `output/` folder) as JSON.  
-- Expose itself as a remote A2A-agent so that the primary agent (facade) can delegate patient intake requests to it.
-
-This encapsulates patient-registration related logic and data-storage responsibilities — keeping them separate from other concerns (appointments, medication lookup, UI).
-"""
-
 import json # Needed for pretty printing dicts
 from typing import Any, Dict
 import os
