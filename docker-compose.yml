@@ -1,7 +1,7 @@
 services:
   app1:
     build:
-      context: ./hackathon/patient_intake_agent
+      context: ./PatientDeskAgent/patient_intake_agent
     command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8001
     environment:
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}
@@ -10,7 +10,7 @@ services:
 
   app2:
     build:
-      context: ./hackathon/appointment_agent
+      context: ./PatientDeskAgent/appointment_agent
     command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8002
     environment:
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}
@@ -19,7 +19,7 @@ services:
 
   app3:
     build:
-      context: ./hackathon/medication_agent
+      context: ./PatientDeskAgent/medication_agent
     command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8003
     environment:
       GOOGLE_API_KEY: ${GOOGLE_API_KEY}

@@ -6,12 +6,14 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 ENV GOOGLE_GENAI_USE_VERTEXAI=False
 
-RUN adduser --disabled-password --gecos "" myuser && \
-    chown -R myuser:myuser /app
+RUN adduser --disabled-password --gecos "" myuser \
+ && mkdir -p PatientDeskAgent/.adk \
+ && chown -R myuser:myuser /app \
+ && chmod -R a+rwX PatientDeskAgent/.adk
 
 COPY . .
 
-RUN chmod -R a+rwX ./hackathon/.adk
+# RUN chmod -R a+rwX ./PatientDeskAgent/.adk
 
 USER myuser
 

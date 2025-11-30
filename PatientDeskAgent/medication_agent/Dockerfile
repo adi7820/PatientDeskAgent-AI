@@ -11,7 +11,6 @@ RUN apt-get update && \
 
 WORKDIR /app
 
-# ENV GOOGLE_API_KEY=AIzaSyB0qgtNswmSOrTKMtcsn3t7rwUxUsz0uYQ
 ENV GOOGLE_GENAI_USE_VERTEXAI=False
 
 COPY requirements.txt .
