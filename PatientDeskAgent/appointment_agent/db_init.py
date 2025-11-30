@@ -45,7 +45,7 @@ def initialize_database():
                 appointments_data.append({'datetime': dt.isoformat(), 'appointment_type': appt_type, 'patient': None})
                 
     # Add some specific flu shot appointments for December 2025 as per user's tool example
-    for day in range(7, 14): # October 7-13, 2025
+    for day in range(7, 14): # December 7-13, 2025
         for hour in [8, 9, 10, 11, 12, 13, 14, 15]:
             dt = datetime.datetime(2025, 12, day, hour, 0, 0)
             appointments_data.append({'datetime': dt.isoformat(), 'appointment_type': 'Flu shots', 'patient': None})
