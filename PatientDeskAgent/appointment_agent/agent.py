@@ -37,6 +37,11 @@ MODEL_NAME = "gemini-2.5-flash"
 local_file_constant = "db/appointment_schedule_constant.db"
 local_file_current = "db/appointment_schedule.db"
 
+"""
+    Enumeration of supported appointment types.
+    This helps restrict/validate appointment_type values,
+    and provides a standard set of identifiers for scheduling queries.
+"""
 class ApptType(Enum):
     adult_physicals = "Adult physicals"
     pediatric_physicals = "Pediatric physicals"
