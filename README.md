@@ -25,3 +25,5 @@ PatientDeskAgent-AI uses a multi-agent architecture to automate common front-des
 All subordinate agents (Appointment, Medication, Patient Intake) run remotely; they communicate with the Primary Agent over the A2A protocol. This decoupled, agent-based design makes the system modular, extensible, and easier to maintain or scale (e.g. adding more agents in future).
 
 ## 🏗 Architecture / Design
+
+![PatientDeskAgent-AI Architecture Diagram](adk_arch_diagram.png)
