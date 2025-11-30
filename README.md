@@ -51,6 +51,18 @@ All subordinate agents (Appointment, Medication, Patient Intake) run remotely; t
 - Agent evaluation
 - A2A Protocol
 
+## 🔄 Multi-Agent Communication via A2A + Docker-Compose
+
+I adopt the A2A Protocol for inter-agent communication meaning that each sub-agent (appointment, medication/medical lookup, patient-intake) runs remotely (in its own container), and the main agent (the user-facing “primary agent”) interacts with them as remote services. This design shows each agent to a standalone service and enabling modularity even if agents are implemented in different languages/frameworks. 
+
+To realize this, I use Docker Compose to spin up three remote-agent containers (e.g. app1, app2, app3) — each hosting one of the sub-agents.
+
+These containers are exposed at different ports (e.g. 8001, 8002, 8003), so that the primary agent can discover and call them over A2A protocol when delegating tasks.
+
+The mainapp application when started via **docker compose up --build** brings up all agents (primary + remote), ensuring the multi-agent system is ready out-of-the-box.
+
+This architecture mirrors a microservices style setup for AI agents, each agent is independently deployable, runs in isolation in its own container, communicates over a Agen2Agent protocol, and collaborates to fulfill complex user queries.
+
 ## 🚀 Quick Start — Setup & Run
 
 ### Prerequisites
