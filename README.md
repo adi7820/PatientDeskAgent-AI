@@ -59,6 +59,20 @@ All subordinate agents (Appointment, Medication, Patient Intake) run remotely; t
 - Access to required remote services (FHIR server, Tavily MCP server)  
 - Appropriate credentials / configuration: Google_API_KEY and Tavily_API_KEY. Example .env file is present in repo with name example.env.txt
 
+### 🔧 Database Initialization — Before Starting the Server
+
+Before launching the full stack, you also have to initialize the database used by the appointment agent. Although, it is already present in the repo:
+
+```bash
+# Move into the `appointment_agent` folder
+cd PatientDeskAgent/appointment_agent
+
+# Run the database initialization script
+python db_init.py
+```
+
+This script sets up the necessary database schema (tables, initial state, etc.) required by the appointment-agent — ensuring that appointment booking and lookup works correctly once you bring up the containers.
+
 ### Build & Start
 
 ```bash
@@ -68,3 +82,20 @@ cd PatientDeskAgent-AI
 # Build and run all agents & services
 docker compose up --build
 ```
+
+This will build the Docker images and start all agents (Primary + sub-agents).
+
+### Usage
+
+Once containers are up, you can interact with the Primary Agent using ADK Web UI at [`http://localhost:8000`](http://localhost:8000). Based on your query (appointment scheduling, patient registration, med-info request), the Primary Agent will delegate to the proper sub-agent and return a response.
+
+Example flows:
+
+Schedule appointment → Primary Agent → Appointment Agent → returns confirmation / slot.
+
+Register new patient → Primary Agent → Patient Intake Agent → patient data stored in output/.
+
+Get medication history → Primary Agent → Medication Agent (interacts with FHIR) → returns meds list.
+
+Ask about a medicine → Primary Agent → Medication Agent → queries Tavily MCP server → returns medicine details.
+
