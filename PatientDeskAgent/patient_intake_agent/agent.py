@@ -1,17 +1,21 @@
+"""
+patient_intake_agent
+
+This module defines the “Patient Intake Agent” for the Healthcare FrontDesk system.
+
+The agent’s purpose:
+- Collect new patient information via a tool (save_to_json_file),  
+- Serialize and store patient data locally (in `output/` folder) as JSON.  
+- Expose itself as a remote A2A-agent so that the primary agent (facade) can delegate patient intake requests to it.
+
+This encapsulates patient-registration related logic and data-storage responsibilities — keeping them separate from other concerns (appointments, medication lookup, UI).
+"""
+
 import json # Needed for pretty printing dicts
-import asyncio
-import datetime
 from typing import Any, Dict
 import os
 from google.adk.agents import LlmAgent
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
-from google.genai import types
 from google.adk.a2a.utils.agent_to_a2a import to_a2a
-from pydantic import BaseModel, Field
-from google.adk.tools import FunctionTool, ToolContext
-from dotenv import load_dotenv
-from zoneinfo import ZoneInfo
 from prompts.patient_intake_system_prompt import patient_intake_prompt
 
 os.environ["GOOGLE_API_KEY"] = os.environ.get("GOOGLE_API_KEY")

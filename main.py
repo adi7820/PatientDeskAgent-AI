@@ -1,3 +1,17 @@
+"""
+main.py — entry point for launching the ADK Web UI for PatientDeskAgent-AI.
+
+This module uses the ADK (Agent Development Kit) framework to instantiate
+a FastAPI web application that exposes a unified UI for interacting with
+the Primary Agent. The Primary Agent — in turn — uses A2A protocol to
+delegate requests to remote sub-agents (appointment, medication lookup,
+patient intake).
+
+When run directly, this script starts a Uvicorn ASGI server to host the API
+on 0.0.0.0:<PORT> (default 8000), allowing clients (e.g. browser) to interact
+with the system.
+"""
+
 import os
 
 import uvicorn

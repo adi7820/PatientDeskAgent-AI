@@ -1,21 +1,17 @@
-import json # Needed for pretty printing dicts
-import asyncio
-import datetime
-from typing import Any, Dict, Optional
+"""
+medical_lookup_agent
+
+This module implements the “Medical Lookup Agent” for the Healthcare FrontDesk system.
+It integrates two kinds of medical-related capabilities:
+
+1. Medical search / general medical info (via an external MCP service — e.g. Tavily).  
+2. Retrieval of a patient’s medication history (via FHIR server), along with tools to fetch patient demographic data (e.g. date-of-birth) for use in diagnosis or context.
+
+It exposes a root agent for A2A (so it can be invoked remotely by the primary_assistant), and wraps sub-agents internally for specialized tasks: medical_search_agent (for general medical queries / info) and medical_diagnosis_agent (for patient-specific medication / history lookup).
+"""
+
 import os
 from google.adk.agents import LlmAgent
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
-from google.genai import types
-from pydantic import BaseModel, Field
-from google.adk.tools import FunctionTool, ToolContext
-from google.adk.tools import google_search
-from dotenv import load_dotenv
-from zoneinfo import ZoneInfo
-import sqlite3
-import pandas as pd
-import shutil
-from enum import Enum
 from prompts.medical_lookup_sys_prompt import medical_search_prompt, medical_diagnose_prompt, medical_lookup_prompt
 from google.adk.tools.mcp_tool import McpToolset
 from google.adk.tools.mcp_tool.mcp_session_manager import StdioConnectionParams
@@ -41,7 +37,7 @@ SESSION_ID_TOOL_AGENT = "session_tool_agent_xyz"
 SESSION_ID_SCHEMA_AGENT = "session_schema_agent_xyz"
 MODEL_NAME = "gemini-2.5-flash"
 TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY")
-patient_id = '14867dba-fb11-4df3-9829-8e8e081b39e6'
+patient_id = '14867dba-fb11-4df3-9829-8e8e081b39e6' # Hard coded patient_id for testing purpose
 
 settings = {
     'app_id': 'my_web_app',

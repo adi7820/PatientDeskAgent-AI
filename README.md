@@ -107,7 +107,7 @@ Schedule appointment → Primary Agent → Appointment Agent → returns confirm
 
 Register new patient → Primary Agent → Patient Intake Agent → patient data stored in output/.
 
-Get medication history → Primary Agent → Medication Agent (interacts with FHIR) → returns meds list.
+Get medication history → Primary Agent → Medication Agent (interacts with FHIR) → returns meds list. (patient_id = '14867dba-fb11-4df3-9829-8e8e081b39e6' # Hard coded patient_id for testing purpose)
 
 Ask about a medicine → Primary Agent → Medication Agent → queries Tavily MCP server → returns medicine details.
 

@@ -1,3 +1,18 @@
+"""
+root_agent_setup.py  (or whatever the real filename)
+
+This module defines the “root agent” (primary_assistant) for the Healthcare FrontDesk system,
+and configures remote sub-agents via the Agent2Agent Protocol (A2A) / Agent Development Kit (ADK) framework.
+
+The root agent acts as the entry point: it analyzes user queries (e.g. appointment booking, patient registration,
+med-info request) and — depending on the intent — delegates tasks to one of the specialized remote agents:
+- Patient Intake Agent  
+- Appointment Agent  
+- Medication / Medical Lookup Agent  
+
+Remote agents are addressed via their “agent cards” over HTTP, enabling decoupled, service-oriented, multi-agent architecture.
+"""
+
 import datetime
 from google.adk.agents import LlmAgent
 from google.adk.agents.remote_a2a_agent import AGENT_CARD_WELL_KNOWN_PATH

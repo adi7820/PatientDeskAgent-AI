@@ -1,16 +1,25 @@
-import json # Needed for pretty printing dicts
-import asyncio
+"""
+appointment_agent
+
+This module defines the appointment-scheduling agent for the
+Healthcare FrontDesk system. It implements functionality to
+- find available appointment slots, and  
+- book an appointment for a patient.
+
+It uses a local SQLite database (with a “constant” template DB and a working DB copy)
+to ensure a clean starting state for each availability search. It exposes two tools:
+    - find_available_appointments  
+    - book_appointment  
+
+These tools are intended to be invoked by a root/facade agent (via A2A)
+so that scheduling operations are handled in a modular, isolated manner.
+"""
+
 import datetime
-from typing import Any, Dict, Optional
+from typing import Optional
 import os
 from google.adk.agents import LlmAgent
-from google.adk.runners import Runner
-from google.adk.sessions import InMemorySessionService
-from google.genai import types
 from google.adk.a2a.utils.agent_to_a2a import to_a2a
-from pydantic import BaseModel, Field
-from google.adk.tools import FunctionTool, ToolContext
-from dotenv import load_dotenv
 from zoneinfo import ZoneInfo
 import sqlite3
 import pandas as pd
