@@ -27,3 +27,44 @@ All subordinate agents (Appointment, Medication, Patient Intake) run remotely; t
 ## 🏗 Architecture / Design
 
 ![PatientDeskAgent-AI Architecture Diagram](adk_arch_diagram.png)
+
+- Primary Agent routes user requests/queries.  
+- Sub-agents handle domain-specific tasks.  
+- Remote communication — enables each sub-agent to operate independently.  
+- Data (like patient info or appointment logs) output to local `output/` folder or returned to user as responses.
+
+## ✅ Features / Capabilities
+
+- Schedule new appointments or look up existing appointments.  
+- Register new patients — storing their info for later reference.  
+- Fetch patient’s medication history (via FHIR) given their ID.  
+- On-demand retrieval of medicine information from an external medicine-info server (Tavily MCP).  
+- Modular architecture: new agents (e.g. billing, lab-results, reminders) can be added easily.
+
+## ✅ Feature Inculded in Agent
+
+- Multi-Agent system: Agent powered by an LLM
+- Tools: MCP, custom tools
+- Session & Memory: Sessions & state management (e.g. InMemorySessionService)
+- Context engineering
+- Observability: Logging, Tracing
+- Agent evaluation
+- A2A Protocol
+
+## 🚀 Quick Start — Setup & Run
+
+### Prerequisites
+
+- Docker & Docker Compose installed  
+- Access to required remote services (FHIR server, Tavily MCP server)  
+- Appropriate credentials / configuration: Google_API_KEY and Tavily_API_KEY. Example .env file is present in repo with name example.env.txt
+
+### Build & Start
+
+```bash
+git clone https://github.com/adi7820/PatientDeskAgent-AI.git
+cd PatientDeskAgent-AI
+
+# Build and run all agents & services
+docker compose up --build
+```
