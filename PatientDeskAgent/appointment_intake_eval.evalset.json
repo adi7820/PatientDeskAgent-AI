@@ -1,0 +1,299 @@
+{
+  "eval_set_id": "appointment_intake_eval",
+  "name": "appointment_intake_eval",
+  "eval_cases": [
+    {
+      "eval_id": "case3295a3",
+      "conversation": [
+        {
+          "invocation_id": "e-c9696dbe-5ab0-4ad0-962f-46e6cc3063e6",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hello"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hi there! How can I help you today? Are you looking to make an appointment, inquire about a medication, or perhaps register as a new patient?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764407399.864729
+        },
+        {
+          "invocation_id": "e-2b1a9307-6b2d-464e-9f93-4b040daea595",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I'm looking to book an appointment"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hello there! I'm your friendly appointment scheduling assistant, and I'm here to help you book your next visit. What type of appointment are you looking to schedule today?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-bcb49d4e-cc62-4120-8dce-4605a612b957",
+                        "args": {
+                          "agent_name": "patient_appointment_agent"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-bcb49d4e-cc62-4120-8dce-4605a612b957",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764409722.399959
+        },
+        {
+          "invocation_id": "e-daac45b5-2d30-4846-8e3a-19212fadadd6",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Can you help me with options of appointments?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "To help me find the best appointment options for you, could you please tell me what kind of appointment you're looking for? For example, is it a general check-up, a specialist consultation, or something else? Also, please let me know your preferred date and time, or any specific requirements you might have.\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764409746.453164
+        },
+        {
+          "invocation_id": "e-6cf86d39-42a2-4fff-8d88-d1f068c590de",
+          "user_content": {
+            "parts": [
+              {
+                "text": "ohk I'm looking for adult physician"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Okay, I will look for available appointments with an adult physician. Do you have a preferred date or time, or any other requirements for the appointment?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764409768.034099
+        },
+        {
+          "invocation_id": "e-dd7c19b8-c7dc-40e3-8a53-101e8756d74e",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Yeah tomorrow 30/11/2025"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Great news! I found several openings for an adult physical on Saturday, November thirtieth, two thousand twenty-five.\n\nYou can choose from:\n*   November thirtieth, two thousand twenty-five at nine A.M.\n*   November thirtieth, two thousand twenty-five at ten A.M.\n*   November thirtieth, two thousand twenty-five at eleven A.M.\n*   November thirtieth, two thousand twenty-five at one P.M.\n*   November thirtieth, two thousand twenty-five at two P.M.\n*   November thirtieth, two thousand twenty-five at three P.M.\n\nPlease let me know which of these times works best for you!"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "text": "Let me check the availability for you.\n"
+                    },
+                    {
+                      "function_call": {
+                        "id": "adk-558eb664-0d9d-4e6f-b2ce-78eda8fbe6e5",
+                        "args": {
+                          "agent_name": "patient_appointment_agent"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-558eb664-0d9d-4e6f-b2ce-78eda8fbe6e5",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764409790.513493
+        },
+        {
+          "invocation_id": "e-022c188a-7fb1-4a7b-9231-55a9a7686395",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Book at 11 AM"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Excellent! Your adult physical appointment is now officially booked for Saturday, November thirtieth, two thousand twenty-five at eleven A.M.\n\nPlease remember to arrive about fifteen minutes early to complete any necessary paperwork. We look forward to seeing you then!\n\nIs there anything else I can assist you with today?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-68c90149-5840-48ec-8890-283148e7ce5c",
+                        "args": {
+                          "agent_name": "patient_appointment_agent"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-68c90149-5840-48ec-8890-283148e7ce5c",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764409820.835932
+        },
+        {
+          "invocation_id": "e-bccc551e-fbee-417d-9e88-f8d3e7492ca0",
+          "user_content": {
+            "parts": [
+              {
+                "text": "No thank you"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Great! If you need anything else in the future, don't hesitate to reach out. Have a wonderful day!\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764409845.597398
+        },
+        {
+          "invocation_id": "e-d0fc34e9-e596-424f-a19b-32706bcd0c83",
+          "user_content": {
+            "parts": [
+              {
+                "text": "exit"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Goodbye!\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764409854.580932
+        }
+      ],
+      "session_input": {
+        "app_name": "hackathon",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764409893.7205663
+    }
+  ],
+  "creation_timestamp": 1764409887.5060098
+}

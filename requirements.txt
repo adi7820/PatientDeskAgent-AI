@@ -1,0 +1,2 @@
+google-adk[a2a,eval]==1.18.0
+pandas==2.3.3

@@ -1,0 +1,502 @@
+{
+  "eval_set_id": "patientintake_eval",
+  "name": "patientintake_eval",
+  "eval_cases": [
+    {
+      "eval_id": "caseaaa487",
+      "conversation": [
+        {
+          "invocation_id": "e-a38ff1e1-58b2-43f6-94a1-1b6b3b096b28",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hi"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hi, how can I help you today? Are you looking to make an appointment, inquire about medication, or register as a new patient?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764410296.047691
+        },
+        {
+          "invocation_id": "e-5dc454b0-9e80-407c-aafc-9f4d066e3324",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I want to register a new patient"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hello! I can help you with registering a new patient. To start, could you please provide the patient's full name?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-a58eb43f-2dd1-46db-844a-933e62cb8a6e",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-a58eb43f-2dd1-46db-844a-933e62cb8a6e",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410305.87037
+        },
+        {
+          "invocation_id": "e-b208e318-39e1-4967-8c9e-13816dd017bc",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Aditya Gupta"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Thank you, Aditya Gupta. Next, could you please provide Aditya's date of birth in YYYY-MM-DD format?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-9c48754b-0db3-43ed-8073-6451043297f0",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-9c48754b-0db3-43ed-8073-6451043297f0",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410313.696225
+        },
+        {
+          "invocation_id": "e-203d3790-71bb-4ef5-ae4a-07d9e04057cb",
+          "user_content": {
+            "parts": [
+              {
+                "text": "2000-06-20"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Got it. 2000-06-20. Now, could you please provide Aditya's full address?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-8a159b7a-3163-4bf5-a0dd-dbaac66aa9f4",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-8a159b7a-3163-4bf5-a0dd-dbaac66aa9f4",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410323.742796
+        },
+        {
+          "invocation_id": "e-973b2aa5-5688-4640-8b93-5330132bd1db",
+          "user_content": {
+            "parts": [
+              {
+                "text": "317B Greens Society Noida UP 210031"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Thank you. Next, what is Aditya's phone number?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-2d95fdce-bd15-4f93-af07-fe35a33028ae",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-2d95fdce-bd15-4f93-af07-fe35a33028ae",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410342.014871
+        },
+        {
+          "invocation_id": "e-f05a8720-da1d-425f-aaac-b47accf21f8d",
+          "user_content": {
+            "parts": [
+              {
+                "text": "8840934177"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Alright, 8840934177. Now, please provide the full name of Aditya's emergency contact."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-d30ca9f8-6889-4d32-8966-faa992eae889",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-d30ca9f8-6889-4d32-8966-faa992eae889",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410351.430423
+        },
+        {
+          "invocation_id": "e-11b51d49-4a38-4c74-8fd5-53c4b73b0aaf",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Anil Gupta 7503966856"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Thank you. So, the emergency contact's name is Anil Gupta. Could you please tell me what Anil's relationship is to Aditya?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-ab651b72-b1b3-441f-ab73-2388ef7ac738",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-ab651b72-b1b3-441f-ab73-2388ef7ac738",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410368.767374
+        },
+        {
+          "invocation_id": "e-6d92722f-3585-4d39-93a0-00735e8da28b",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Father"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Great, thank you!\n\nI've collected the following information:\n1. Full Name: Aditya Gupta\n2. Date of Birth: 2000-06-20\n3. Address: 317B Greens Society Noida UP 210031\n4. Phone Number: 8840934177\n5. Emergency Contact Name: Anil Gupta\n6. Emergency Contact Relationship: Father\n\nDoes this all look correct, or would you like to make any changes?"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-03622ec1-1865-4968-b17c-e276396b562f",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-03622ec1-1865-4968-b17c-e276396b562f",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410375.060481
+        },
+        {
+          "invocation_id": "e-82a6ba68-468a-4bf4-9891-deaec2b7459e",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Yep correct"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Thank you! Your information has been successfully saved. [CONVERSATION_COMPLETE]"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-ffdfe595-49e7-4a19-babe-ec4ac9d2a9b1",
+                        "args": {
+                          "agent_name": "patient_intake_agent_remote"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-ffdfe595-49e7-4a19-babe-ec4ac9d2a9b1",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764410387.979549
+        }
+      ],
+      "session_input": {
+        "app_name": "hackathon",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764410424.631764
+    }
+  ],
+  "creation_timestamp": 1764410418.9225552
+}

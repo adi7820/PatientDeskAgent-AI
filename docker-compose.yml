@@ -1,0 +1,41 @@
+services:
+  app1:
+    build:
+      context: ./hackathon/patient_intake_agent
+    command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8001
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    ports:
+      - "8001:8001"
+
+  app2:
+    build:
+      context: ./hackathon/appointment_agent
+    command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8002
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    ports:
+      - "8002:8002"
+
+  app3:
+    build:
+      context: ./hackathon/medication_agent
+    command: uvicorn agent:a2a_app --host 0.0.0.0 --port 8003
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+      TAVILY_API_KEY: ${TAVILY_API_KEY}
+    ports:
+      - "8003:8003"
+
+  mainapp:
+    build:
+      context: ./   # directory for your main application
+    command: python main.py   # or how you start it
+    environment:
+      GOOGLE_API_KEY: ${GOOGLE_API_KEY}
+    depends_on:
+      - app1
+      - app2
+      - app3
+    ports:
+        - "8000:8000"

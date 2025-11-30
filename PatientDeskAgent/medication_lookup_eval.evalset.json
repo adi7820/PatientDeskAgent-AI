@@ -1,0 +1,175 @@
+{
+  "eval_set_id": "medication_lookup_eval",
+  "name": "medication_lookup_eval",
+  "eval_cases": [
+    {
+      "eval_id": "casec93113",
+      "conversation": [
+        {
+          "invocation_id": "e-dcc85d11-6a7a-4d14-8a60-5aa20c45e3cf",
+          "user_content": {
+            "parts": [
+              {
+                "text": "Hello"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Hi there! How can I help you today? Are you looking to inquire about medication, make an appointment, or register as a new patient?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764406932.537208
+        },
+        {
+          "invocation_id": "e-3c1f9bb8-4379-4f63-86c1-c45780257427",
+          "user_content": {
+            "parts": [
+              {
+                "text": "I'm looking for my medications."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Here is a list of your current medications: Chlorpheniramine Maleate 2 MG/ML Oral Solution, Ibuprofen 200 MG Oral Tablet, and Acetaminophen 325 MG Oral Tablet.\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-aa4c2735-a811-4f48-b860-212458ec11e0",
+                        "args": {
+                          "agent_name": "medical_lookup_agent"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-aa4c2735-a811-4f48-b860-212458ec11e0",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764406957.700039
+        },
+        {
+          "invocation_id": "e-b4a61a61-c7e7-4471-8df9-07e7bd521163",
+          "user_content": {
+            "parts": [
+              {
+                "text": "okay thank you, can you also help me with what are the side effects of Ibuprofen?"
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Common side effects of Ibuprofen include stomach pain, constipation or diarrhea, gas or heartburn, nausea or vomiting, dyspepsia, bloating, dizziness, and headache.\n\nMore serious side effects that require immediate medical attention can include: blistering, peeling, or loosening of the skin; chills, cough, fever, itching, joint or muscle pain, red skin lesions, sore throat, sores or white spots in the mouth or on the lips, unusual tiredness or weakness, swelling of the face, fingers, feet, and/or lower legs; severe stomach pain, black or tarry stools, vomiting blood or material that looks like coffee grounds; unusual weight gain; yellow skin or eyes; decreased urination; bleeding or bruising; and skin rash.\n\nIbuprofen can also interact with other medications, especially high blood pressure medications, which can lead to serious adverse effects. It's important to talk with your doctor about how much ibuprofen (if any) is safe for you based on your specific health issues and concerns, and if you experience any serious side effects."
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {
+            "invocation_events": [
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_call": {
+                        "id": "adk-3b971e7b-05e7-498e-a9ca-be0bc10e8c94",
+                        "args": {
+                          "agent_name": "medical_lookup_agent"
+                        },
+                        "name": "transfer_to_agent"
+                      }
+                    }
+                  ],
+                  "role": "model"
+                }
+              },
+              {
+                "author": "primary_assistant",
+                "content": {
+                  "parts": [
+                    {
+                      "function_response": {
+                        "id": "adk-3b971e7b-05e7-498e-a9ca-be0bc10e8c94",
+                        "name": "transfer_to_agent",
+                        "response": {
+                          "result": null
+                        }
+                      }
+                    }
+                  ],
+                  "role": "user"
+                }
+              }
+            ]
+          },
+          "creation_timestamp": 1764406997.875951
+        },
+        {
+          "invocation_id": "e-ae293852-5ab2-4e41-b590-3e5e2a3805ba",
+          "user_content": {
+            "parts": [
+              {
+                "text": "ok got it thanks."
+              }
+            ],
+            "role": "user"
+          },
+          "final_response": {
+            "parts": [
+              {
+                "text": "Is there anything else I can help you with today? Perhaps you'd like to make an appointment or register as a new patient?\n"
+              }
+            ],
+            "role": "model"
+          },
+          "intermediate_data": {},
+          "creation_timestamp": 1764407026.831635
+        }
+      ],
+      "session_input": {
+        "app_name": "hackathon",
+        "user_id": "user"
+      },
+      "creation_timestamp": 1764407073.9500988
+    }
+  ],
+  "creation_timestamp": 1764407060.987154
+}
